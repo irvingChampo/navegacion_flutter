@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
+import 'package:practica_colores/core/router/app_router.dart';
 import 'package:practica_colores/core/router/app_routes.dart';
 import 'package:practica_colores/features/color_scheme_demo/presentation/page/color_scheme_page.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       initialRoute: AppRoutes.home,
-      onGenerateRoute: AppRoutes.onGenerateRoute,
+      onGenerateRoute: AppRouter.onGenerateRoute,
     );
   }
 }

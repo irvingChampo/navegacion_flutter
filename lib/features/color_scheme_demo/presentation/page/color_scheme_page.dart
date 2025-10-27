@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
+// Importamos las rutas
+import 'package:practica_colores/core/router/app_routes.dart';
 import '../widgets/color_tile.dart';
 import '../widgets/section_title.dart';
 import '../widgets/typography_section.dart';
 
 class ColorSchemePage extends StatelessWidget {
   const ColorSchemePage({super.key});
-
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text("Demostración de ColorScheme"),
@@ -75,6 +75,29 @@ class ColorSchemePage extends StatelessWidget {
               const SizedBox(height: 24),
 
               const TypographySection(),
+
+              // --- BOTONES DE NAVEGACIÓN AÑADIDOS ---
+              const SizedBox(height: 24),
+              const SectionTitle(text: "Navegación"),
+              Wrap(
+                spacing: 8,
+                runSpacing: 8,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.responsive);
+                    },
+                    child: const Text('Ir a Card Responsiva'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, AppRoutes.estadisticas);
+                    },
+                    child: const Text('Ir a Dashboard'),
+                  ),
+                ],
+              ),
+              // --- FIN DE BOTONES AÑADIDOS ---
             ],
           ),
         ),
